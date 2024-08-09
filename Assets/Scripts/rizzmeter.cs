@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class rizzmeter : MonoBehaviour
 {
-    float rizz;
+    public int rizz;
     public Transform meterpercentage;
+    public int maxrizz = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +16,10 @@ public class rizzmeter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rizz = rizz + Time.deltaTime/5;
+        //rizz = rizz + Time.deltaTime/5;
         Debug.Log($"rizz is {rizz}");
-        meterpercentage.localScale = new Vector3(1,rizz,1);
+        meterpercentage.localScale = new Vector3(1,rizz/(float)maxrizz,1);
+        if (rizz > maxrizz) rizz = maxrizz;
+        if (rizz < 0) rizz = 0;
     }
 }
