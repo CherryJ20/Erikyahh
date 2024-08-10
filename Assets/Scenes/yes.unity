@@ -815,7 +815,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1986736141}
         m_TargetAssemblyTypeName: DialogueButtons, Assembly-CSharp
-        m_MethodName: Response
+        m_MethodName: Beans
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1082,7 +1082,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1986736141}
         m_TargetAssemblyTypeName: DialogueButtons, Assembly-CSharp
-        m_MethodName: Response2
+        m_MethodName: Beans2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1923,7 +1923,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1986736141}
         m_TargetAssemblyTypeName: DialogueButtons, Assembly-CSharp
-        m_MethodName: Response3
+        m_MethodName: Beans3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2646,7 +2646,7 @@ GameObject:
   - component: {fileID: 1986736142}
   - component: {fileID: 1986736141}
   m_Layer: 0
-  m_Name: Script
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2667,6 +2667,7 @@ MonoBehaviour:
   rizzMeter: 0
   Responses1: {fileID: 1946475841}
   Responses2: {fileID: 372643731}
+  Responses3: {fileID: 191963712}
 --- !u!4 &1986736142
 Transform:
   m_ObjectHideFlags: 0
