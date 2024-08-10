@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class Dialogue : MonoBehaviour
@@ -17,71 +16,53 @@ public class Dialogue : MonoBehaviour
     public TMP_Text chooseOne;
     public TMP_Text chooseTwo;
     public TMP_Text chooseThree;
-
+    public GameObject introScreen; // Reference to the intro screen GameObject
+    public GameObject dialoguePanel; // Reference to the dialogue panel GameObject
+    public DialogueButtons dialogueButtons; // Reference to the DialogueButtons script
 
     private int rizzMeter = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         currentChoice = DialogueChoice.Introduction;
+        ShowIntroScreen();
+    }
+
+    void ShowIntroScreen()
+    {
+        introScreen.SetActive(true); // Show the intro screen
+        dialoguePanel.SetActive(false); // Hide dialogue panel
+    }
+
+    public void StartDialogue()
+    {
+        introScreen.SetActive(false); // Hide the intro screen
+        dialoguePanel.SetActive(true); // Show dialogue panel
         DialogueOptions();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            HandleDialogue(1);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            HandleDialogue(2);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            HandleDialogue(3);
-        }
-    }
-
-    // HANDLES DIALOGUE OPTIONS FROM ENUM
     public void DialogueOptions()
     {
         switch (currentChoice)
         {
             case DialogueChoice.Introduction:
                 dialogueTextMesh.text = "Welcome! Choose wisely.";
+                dialogueButtons.SetButtonTexts("Select Bachelor 1", "Select Bachelor 2", "Select Bachelor 3");
                 break;
 
             case DialogueChoice.Choice01:
                 dialogueTextMesh.text = "You selected Choice 01.";
-                chooseOne.text = "One";
-                chooseTwo.text = "Two";
-                chooseThree.text = "Three";
+                dialogueButtons.SetButtonTexts("Option A", "Option B", "Option C");
                 break;
 
-            case DialogueChoice.Choice02:
-                dialogueTextMesh.text = "You selected Choice 02.";
-                chooseOne.text = "One";
-                chooseTwo.text = "Two";
-                chooseThree.text = "Three";
-                break;
-
-            case DialogueChoice.Choice03:
-                dialogueTextMesh.text = "You selected Choice 03.";
-                chooseOne.text = "One";
-                chooseTwo.text = "Two";
-                chooseThree.text = "Three";
-                break;
 
             case DialogueChoice.Ending:
                 dialogueTextMesh.text = rizzMeter > 0 ? "Success!" : "Try again.";
+                dialogueButtons.SetButtonTexts("", "", "");
                 break;
         }
     }
 
-    // HANDLES DIALOGUE BASED ON INPUT
     public void HandleDialogue(int choice)
     {
         switch (currentChoice)
@@ -94,13 +75,6 @@ public class Dialogue : MonoBehaviour
                 HandleFirstChoice(choice);
                 break;
 
-            case DialogueChoice.Choice02:
-                HandleSecondChoice(choice);
-                break;
-
-            case DialogueChoice.Choice03:
-                HandleThirdChoice(choice);
-                break;
 
             case DialogueChoice.Ending:
                 HandleEndChoice(choice);
@@ -108,28 +82,24 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    // HANDLE INTRO
-    public void HandleIntro(int choice)
+    private void HandleIntro(int choice)
     {
-        if (choice == 1)
-        {
-            rizzMeter += 2;
-        }
-        else if (choice == 2)
-        {
-            rizzMeter += 1;
-        }
-        else
-        {
-            rizzMeter -= 1;
-        }
-
+        UpdateRizzMeter(choice);
         currentChoice = DialogueChoice.Choice01;
-        Invoke("DialogueOptions", 2f);
+        Invoke("DialogueOptions", 2f); // Delay for showing options
     }
 
-    // HANDLES THE FIRST CHOICE
-    public void HandleFirstChoice(int choice)
+    private void HandleFirstChoice(int choice)
+    {
+        UpdateRizzMeter(choice);
+    }
+
+    private void HandleEndChoice(int choice)
+    {
+        UpdateRizzMeter(choice);
+    }
+
+    private void UpdateRizzMeter(int choice)
     {
         if (choice == 1)
         {
@@ -143,56 +113,8 @@ public class Dialogue : MonoBehaviour
         {
             rizzMeter -= 1;
         }
-    }
 
-    // HANDLES THE SECOND CHOICE
-    public void HandleSecondChoice(int choice)
-    {
-        if (choice == 1)
-        {
-            rizzMeter += 2;
-        }
-        else if (choice == 2)
-        {
-            rizzMeter += 1;
-        }
-        else
-        {
-            rizzMeter -= 1;
-        }
-    }
-
-    // HANDLES THE THIRD CHOICE
-    public void HandleThirdChoice(int choice)
-    {
-        if (choice == 1)
-        {
-            rizzMeter += 2;
-        }
-        else if (choice == 2)
-        {
-            rizzMeter += 1;
-        }
-        else
-        {
-            rizzMeter -= 1;
-        }
-    }
-
-    // HANDLES THE ENDING
-    public void HandleEndChoice(int choice)
-    {
-        if (choice == 1)
-        {
-            rizzMeter += 2;
-        }
-        else if (choice == 2)
-        {
-            rizzMeter += 1;
-        }
-        else
-        {
-            rizzMeter -= 1;
-        }
+        // Update the rizz meter in the other script
+        dialogueButtons.UpdateRizzMeter(rizzMeter);
     }
 }

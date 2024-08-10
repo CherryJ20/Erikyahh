@@ -1,9 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement; // For scene management
 
 [Serializable]
 public struct Bachelor
@@ -12,51 +12,81 @@ public struct Bachelor
     public string bio;
     public Sprite photo;
 }
+
 public class BachRotation : MonoBehaviour
 {
     public List<Bachelor> bachelors;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI bioText;
-    public GameObject photoObject;
+    public Image photoImage;
+    public Button likeButton;
+    public Button dislikeButton;
+    public Button selectButton;
 
     private int selectedIndex = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         UpdateInfo();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
+        // Set up button listeners
+        likeButton.onClick.AddListener(OnLike);
+        dislikeButton.onClick.AddListener(OnDislike);
+        selectButton.onClick.AddListener(OnSelect);
     }
 
-    public void UpdateInfo()
+    void UpdateInfo()
     {
+        if (bachelors.Count == 0) return; // Avoid errors if no bachelors
+
         nameText.text = bachelors[selectedIndex].name;
         bioText.text = bachelors[selectedIndex].bio;
-        photoObject.GetComponent<Image>().sprite = bachelors[selectedIndex].photo;
-        photoObject.GetComponent<Image>().preserveAspect = true;
+        photoImage.sprite = bachelors[selectedIndex].photo;
+        photoImage.preserveAspect = true;
     }
 
-    public void Like()
+    // Handle the Like button click
+    void OnLike()
     {
-        // load next scene
+        // Handle like logic 
+        Debug.Log($"Liked: {bachelors[selectedIndex].name}");
+
+        // Move to the next bachelor
+        MoveToNextBachelor();
     }
 
-    public void Unlike()
+    // Handle the Dislike button click
+    void OnDislike()
     {
-        //rotates bachelor
-        if (selectedIndex < bachelors.Count - 1)
-        {
-            selectedIndex++;
-        }
-        else
-        {
-            selectedIndex = 0;
-        }
+        // Handle dislike logic 
+        Debug.Log($"Disliked: {bachelors[selectedIndex].name}");
+
+        // Move to the next bachelor
+        MoveToNextBachelor();
+    }
+
+    // Handle the Select button click
+    void OnSelect()
+    {
+        // Handle character selection logic
+        Debug.Log($"Selected: {bachelors[selectedIndex].name}");
+
+        // Transition to the selected character's dialog
+        PlayerPrefs.SetInt("SelectedCharacterIndex", selectedIndex); // Save the selected character index
+        SceneManager.LoadScene("CharacterDialogScene"); // Load the dialog scene
+    }
+
+    // Move to the next bachelor
+    void MoveToNextBachelor()
+    {
+        selectedIndex = (selectedIndex + 1) % bachelors.Count; // Rotate through the list
+        UpdateInfo();
+    }
+
+    // Optional: Move to the previous bachelor
+    void MoveToPreviousBachelor()
+    {
+        selectedIndex = (selectedIndex - 1 + bachelors.Count) % bachelors.Count; // Rotate through the list
         UpdateInfo();
     }
 }
