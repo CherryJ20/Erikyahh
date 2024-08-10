@@ -37,7 +37,8 @@ public class BachRotation : MonoBehaviour
     {
         nameText.text = bachelors[selectedIndex].name;
         bioText.text = bachelors[selectedIndex].bio;
-        photoObject.GetComponent<SpriteRenderer>().sprite = bachelors[selectedIndex].photo;
+        photoObject.GetComponent<Image>().sprite = bachelors[selectedIndex].photo;
+        photoObject.GetComponent<Image>().preserveAspect = true;
     }
 
     public void Like()
