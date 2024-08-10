@@ -1,4 +1,4 @@
-<img src="https://nichemedia.co.nz/wp-content/uploads/2023/03/placeholder-banner.png" alt="idk dating banner???" style= "width: 100%; height: auto; object-fit: cover;">
+<img src="Untitled design.png" alt="idk dating banner???" style= "width: 100%; height: auto; object-fit: cover;">
 
 # Timeder: A Historical Dating Adventure
 
