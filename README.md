@@ -1,3 +1,4 @@
+<img src="https://nichemedia.co.nz/wp-content/uploads/2023/03/placeholder-banner.png" alt="idk dating banner???" style= "width: 100%; height: auto; object-fit: cover;">
 # Timeder: A Historical Dating Adventure
 
 ## Overview
@@ -15,6 +16,8 @@ In Timeder, you’ll:
 ## Characters
 
 - **Marie Antoinette**: The glamorous queen of France. Charm her with elegance and grace.
+  <img src="https://i.etsystatic.com/6908127/r/il/01ef7e/1516119708/il_fullxfull.1516119708_11w2.jpg" alt="Antoinette" style= "width: 400px; height: 400px">
 - **Genghis Khan**: The powerful Mongolian leader. Impress him with strength and honor.
+  <img src="https://images.nightcafe.studio/jobs/jhkHeiBzBjU5VLeMjzT6/jhkHeiBzBjU5VLeMjzT6--1--46jrg_15.625x.jpg?tr=w-1600,c-at_max" alt="Antoinette" style= "width: 400px; height: 400px">
 - **William Shakespeare**: The famous playwright. Delight him with clever and poetic dialogue.
-
+  <img src="https://www.blippar.com/uploads/legacy/Listing/_flexL/selfie.jpg" alt="Antoinette" style= "width: 400px; height: 200px">
