@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Rizzmeter : MonoBehaviour
 {
     public int rizz;
-    public Transform colour;
     public int maxrizz = 100;
     public int minrizz = 0;
     public Image rizzimg;
@@ -24,7 +24,6 @@ public class Rizzmeter : MonoBehaviour
     void Update()
     {
         rizzimg.fillAmount = rizz / (float)maxrizz;
-        Debug.Log($"fill amount is {rizzimg.fillAmount}");
         if (rizz > maxrizz)
         {
             rizz = maxrizz;
@@ -40,18 +39,16 @@ public class Rizzmeter : MonoBehaviour
     {
         if(GameManager.currentBachelor == selectedBachelor.Shakespeare && rizz >= 70)
         {
-            //ending
-            Debug.Log("You got the good ending!");
+            SceneManager.LoadScene("Win-Shakespeare");
         }
         else if(GameManager.currentBachelor == selectedBachelor.Shakespeare && rizz <= 70)
         {
-            //
-            Debug.Log("You got the bad ending!");
+            SceneManager.LoadScene("Lose-Shakespeare");
         }
 
         if(GameManager.currentBachelor == selectedBachelor.MarieAntoinette && rizz >= 85)
         {
-            //ending
+            //
         }
         else if(GameManager.currentBachelor == selectedBachelor.MarieAntoinette && rizz <= 85)
         {
@@ -61,11 +58,11 @@ public class Rizzmeter : MonoBehaviour
 
         if(GameManager.currentBachelor == selectedBachelor.GenghisKhan && rizz >= 100)
         {
-            //ending
+            SceneManager.LoadScene("Win-GenghisKhan");
         }
         else if(GameManager.currentBachelor == selectedBachelor.GenghisKhan && rizz <= 100)
         {
-            //
+            SceneManager.LoadScene("Lose-GenghisKhan");
         }
         
     }

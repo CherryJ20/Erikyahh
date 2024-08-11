@@ -21,7 +21,7 @@ public class ErikaDialogue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI option1;
     [SerializeField] private TextMeshProUGUI option2;
     [SerializeField] private TextMeshProUGUI option3;
-    private int index = 0;
+    public int index = 0;
     public GameObject Responses1; //Parent objects of the buttons
     public GameObject continueButton;
 
@@ -42,6 +42,9 @@ public class ErikaDialogue : MonoBehaviour
     public void UpdateUI()
     {
         bachelorTextObj.text = dialogueOptions[index].bachelorText;
+        option1.text = dialogueOptions[index].response1;
+        option2.text = dialogueOptions[index].response2;
+        option3.text = dialogueOptions[index].response3;
     }
 
     public void IterateConvo()
