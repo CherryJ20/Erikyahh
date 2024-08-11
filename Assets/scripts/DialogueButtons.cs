@@ -22,7 +22,7 @@ public class DialogueButtons : MonoBehaviour
         //reactionImage.sprite = reactions[0];
         reactionImage.GetComponent<SpriteRenderer>().sprite = reactions[0];
 
-        ErikaDialogue.Instance.bachelorTextObj.text = "Thats cool.";
+        ErikaDialogue.Instance.bachelorTextObj.text = "Splendid.";
         StartCoroutine(ErikaDialogue.Instance.ReactionPause());
 
     }
@@ -31,7 +31,7 @@ public class DialogueButtons : MonoBehaviour
         rizzMeter += 20;
         reactionImage.GetComponent<SpriteRenderer>().sprite = reactions[1];
 
-        ErikaDialogue.Instance.bachelorTextObj.text = "SUGOI!";
+        ErikaDialogue.Instance.bachelorTextObj.text = "Thy words shine as a beacon in the dark, revealing wisdom and kindred spirit. Let us continue to share such light and insight.";
         StartCoroutine(ErikaDialogue.Instance.ReactionPause());
     }
         public void Response3()
@@ -39,7 +39,7 @@ public class DialogueButtons : MonoBehaviour
         rizzMeter -= 10;
         reactionImage.GetComponent<SpriteRenderer>().sprite = reactions[2];
 
-        ErikaDialogue.Instance.bachelorTextObj.text = "Um... Ok?";
+        ErikaDialogue.Instance.bachelorTextObj.text = "Thy words are as empty as a fool's boast—better spent elsewhere.";
         StartCoroutine(ErikaDialogue.Instance.ReactionPause());
     }
 
