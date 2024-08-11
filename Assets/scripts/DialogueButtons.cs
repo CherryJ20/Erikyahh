@@ -9,17 +9,11 @@ public class DialogueButtons : MonoBehaviour
     public int rizzMeter;
     [SerializeField]private List<Sprite> reactions;
     public GameObject reactionImage;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject continueButton;
 
     public void Response() //When button 1 is clicked
     {
         rizzMeter += 10; //makes the rizz meter increase depending on what option users pick
-        //reactionImage.sprite = reactions[0];
         reactionImage.GetComponent<SpriteRenderer>().sprite = reactions[0];
 
         ErikaDialogue.Instance.bachelorTextObj.text = "Thats cool.";
@@ -46,6 +40,7 @@ public class DialogueButtons : MonoBehaviour
     public void Continue()
     {
         ErikaDialogue.Instance.Responses1.SetActive(true);
+        ErikaDialogue.Instance.continueButton.SetActive(false);
     }
      
 }

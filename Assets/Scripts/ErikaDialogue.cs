@@ -23,7 +23,7 @@ public class ErikaDialogue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI option3;
     private int index = 0;
     public GameObject Responses1; //Parent objects of the buttons
-
+    public GameObject continueButton;
 
 
     public static ErikaDialogue Instance;
@@ -62,7 +62,7 @@ public class ErikaDialogue : MonoBehaviour
         Responses1.SetActive(false);
         yield return new WaitForSeconds(2);
         IterateConvo();
-
+        continueButton.SetActive(true);
     }
     
 }

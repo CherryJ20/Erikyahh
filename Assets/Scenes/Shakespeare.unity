@@ -1457,6 +1457,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 04a7e31215be3ad4296db76adec7c9a8, type: 3}
   - {fileID: 21300000, guid: 129f49546b970394693b0c41d973faad, type: 3}
   reactionImage: {fileID: 1878603601}
+  continueButton: {fileID: 2038909404}
 --- !u!4 &1771865543
 Transform:
   m_ObjectHideFlags: 0
@@ -1577,6 +1578,7 @@ MonoBehaviour:
   option2: {fileID: 836192527}
   option3: {fileID: 1856806544}
   Responses1: {fileID: 1434521628}
+  continueButton: {fileID: 2038909404}
 --- !u!1 &1787073035
 GameObject:
   m_ObjectHideFlags: 0
