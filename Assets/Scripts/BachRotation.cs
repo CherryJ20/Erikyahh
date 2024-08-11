@@ -12,6 +12,7 @@ public struct Bachelor
     public string name;
     public string bio;
     public Sprite photo;
+    public selectedBachelor bachelor;
 }
 public class BachRotation : MonoBehaviour
 {
@@ -32,14 +33,25 @@ public class BachRotation : MonoBehaviour
     {
         nameText.text = bachelors[selectedIndex].name;
         bioText.text = bachelors[selectedIndex].bio;
+        GameManager.currentBachelor = bachelors[selectedIndex].bachelor;
         photoObject.GetComponent<Image>().sprite = bachelors[selectedIndex].photo;
         photoObject.GetComponent<Image>().preserveAspect = true;
     }
 
     public void Like()
     {
-        // load next scene
-        SceneManager.LoadScene("Shakespeare");
+        switch(GameManager.currentBachelor)
+        {
+            case selectedBachelor.Shakespeare:
+                SceneManager.LoadScene("Shakespeare");
+                break;
+            case selectedBachelor.MarieAntoinette:
+                SceneManager.LoadScene("MarieAntoinette");
+                break;
+            case selectedBachelor.GenghisKhan:
+                SceneManager.LoadScene("GenghisKhan");
+                break;
+        }
     }
 
     public void Unlike()
@@ -55,4 +67,6 @@ public class BachRotation : MonoBehaviour
         }
         UpdateInfo();
     }
+
+    
 }
