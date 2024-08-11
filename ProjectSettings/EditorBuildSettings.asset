@@ -14,4 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shakespeare.unity
     guid: 65af04d07015cd444992a60a2ea5064e
+  - enabled: 1
+    path: Assets/Scenes/GenghisKhan.unity
+    guid: da7965b307386974b8ba8b55a9028785
+  - enabled: 1
+    path: Assets/Scenes/Lose-Genghis.unity
+    guid: e7aaad3c2413667429bd16ed7d63d204
+  - enabled: 1
+    path: Assets/Scenes/Win-Genghis.unity
+    guid: ec10a63dc8d30824cabc6e0d07d189ca
+  - enabled: 1
+    path: Assets/Scenes/Win-Shakespeare.unity
+    guid: 5adc0c70e145dd3408f418724eeb7626
+  - enabled: 1
+    path: Assets/Scenes/Lose-Shakespeare.unity
+    guid: ce498b0e77d7b174d8bfb47e5db62d86
   m_configObjects: {}
