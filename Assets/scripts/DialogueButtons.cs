@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class DialogueButtons : MonoBehaviour
 {
     //variables
-    public int rizzMeter;
     [SerializeField]private List<Sprite> reactions;
     public List<string> bachResponses;
     public GameObject reactionImage;
@@ -14,7 +13,7 @@ public class DialogueButtons : MonoBehaviour
 
     public void Response() //When button 1 is clicked
     {
-        rizzMeter += 10; //makes the rizz meter increase depending on what option users pick
+        Rizzmeter.Instance.rizz += 10; //makes the rizz meter increase depending on what option users pick
         reactionImage.GetComponent<SpriteRenderer>().sprite = reactions[0];
 
         ErikaDialogue.Instance.bachelorTextObj.text = bachResponses[0];
@@ -23,7 +22,7 @@ public class DialogueButtons : MonoBehaviour
     }
         public void Response2() //When button 2 is clicked
     {
-        rizzMeter += 20;
+        Rizzmeter.Instance.rizz += 20;
         reactionImage.GetComponent<SpriteRenderer>().sprite = reactions[1];
 
         ErikaDialogue.Instance.bachelorTextObj.text = bachResponses[1];
@@ -31,7 +30,7 @@ public class DialogueButtons : MonoBehaviour
     }
         public void Response3()
     {
-        rizzMeter -= 10;
+        Rizzmeter.Instance.rizz -= 10;
         reactionImage.GetComponent<SpriteRenderer>().sprite = reactions[2];
 
         ErikaDialogue.Instance.bachelorTextObj.text = bachResponses[2];
