@@ -53,7 +53,7 @@ public class ErikaDialogue : MonoBehaviour
         }
         else
         {
-            Debug.Log("END --> CHECK RIZZ METER LEVEL");
+            Rizzmeter.Instance.WinRizz();
         }
     }
 

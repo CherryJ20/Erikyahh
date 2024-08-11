@@ -8,6 +8,7 @@ public class DialogueButtons : MonoBehaviour
     //variables
     public int rizzMeter;
     [SerializeField]private List<Sprite> reactions;
+    private List<string> bachResponses;
     public GameObject reactionImage;
     public GameObject continueButton;
 
@@ -16,7 +17,7 @@ public class DialogueButtons : MonoBehaviour
         rizzMeter += 10; //makes the rizz meter increase depending on what option users pick
         reactionImage.GetComponent<SpriteRenderer>().sprite = reactions[0];
 
-        ErikaDialogue.Instance.bachelorTextObj.text = "Thats cool.";
+        //ErikaDialogue.Instance.bachelorTextObj.text = bachResponses[0];
         StartCoroutine(ErikaDialogue.Instance.ReactionPause());
 
     }
@@ -25,7 +26,8 @@ public class DialogueButtons : MonoBehaviour
         rizzMeter += 20;
         reactionImage.GetComponent<SpriteRenderer>().sprite = reactions[1];
 
-        ErikaDialogue.Instance.bachelorTextObj.text = "SUGOI!";
+        //ErikaDialogue.Instance.bachelorTextObj.text = bachResponses[1];
+        ErikaDialogue.Instance.bachelorTextObj.text = "I'm glad you think so!";
         StartCoroutine(ErikaDialogue.Instance.ReactionPause());
     }
         public void Response3()
@@ -33,7 +35,7 @@ public class DialogueButtons : MonoBehaviour
         rizzMeter -= 10;
         reactionImage.GetComponent<SpriteRenderer>().sprite = reactions[2];
 
-        ErikaDialogue.Instance.bachelorTextObj.text = "Um... Ok?";
+        //ErikaDialogue.Instance.bachelorTextObj.text = bachResponses[2];
         StartCoroutine(ErikaDialogue.Instance.ReactionPause());
     }
 
