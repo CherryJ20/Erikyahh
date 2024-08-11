@@ -48,11 +48,11 @@ public class Rizzmeter : MonoBehaviour
 
         if(GameManager.currentBachelor == selectedBachelor.MarieAntoinette && rizz >= 85)
         {
-            //
+            SceneManager.LoadScene("Win-MarieAntoinette");
         }
         else if(GameManager.currentBachelor == selectedBachelor.MarieAntoinette && rizz <= 85)
         {
-            //
+            SceneManager.LoadScene("Lose-MarieAntoinette");
         }
 
 
