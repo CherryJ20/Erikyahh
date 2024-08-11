@@ -545,13 +545,16 @@ MonoBehaviour:
       the stars. Swipe right if thou art prepared for a love as eternal as mine own
       quill."
     photo: {fileID: 21300000, guid: 9ebc02274a2fe8b48b1794cc9f71cbbe, type: 3}
+    bachelor: 0
   - name: Marie Antoinette, 1700's
     bio: 'Queen of France <3 Let us eat cake! Looking for a rich royal to pay rent
       & spoil me I want to see you in the reflection of my diamond necklace~  '
     photo: {fileID: 21300000, guid: f2050b357a6787c42820566f3dfe211f, type: 3}
+    bachelor: 1
   - name: Genghis Khan, 1200's
     bio: In need of a sixth betrothed.
     photo: {fileID: 21300000, guid: 84545d6fbb9d4f546bde5da30ae708db, type: 3}
+    bachelor: 2
   nameText: {fileID: 804861437}
   bioText: {fileID: 1680086554}
   photoObject: {fileID: 1926386465}
@@ -2334,7 +2337,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1782184405}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 215095389}
+        m_TargetAssemblyTypeName: BachRotation, Assembly-CSharp
+        m_MethodName: Like
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1782184405
 MonoBehaviour:
   m_ObjectHideFlags: 0
