@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public struct Bachelor
@@ -27,12 +28,6 @@ public class BachRotation : MonoBehaviour
         UpdateInfo();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateInfo()
     {
         nameText.text = bachelors[selectedIndex].name;
@@ -44,6 +39,7 @@ public class BachRotation : MonoBehaviour
     public void Like()
     {
         // load next scene
+        SceneManager.LoadScene("Shakespeare");
     }
 
     public void Unlike()

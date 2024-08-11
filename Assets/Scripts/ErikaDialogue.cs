@@ -59,9 +59,9 @@ public class ErikaDialogue : MonoBehaviour
 
     public IEnumerator ReactionPause()
     {
+        Responses1.SetActive(false);
         yield return new WaitForSeconds(2);
         IterateConvo();
-        Responses1.SetActive(false);
 
     }
     
