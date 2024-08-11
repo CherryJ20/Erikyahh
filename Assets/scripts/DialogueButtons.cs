@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class DialogueButtons : MonoBehaviour
 {
+    //variables
     public int rizzMeter;
     [SerializeField]private List<Sprite> reactions;
     public Image reactionImage;
