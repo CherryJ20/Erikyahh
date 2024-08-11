@@ -58,11 +58,11 @@ public class Rizzmeter : MonoBehaviour
 
         if(GameManager.currentBachelor == selectedBachelor.GenghisKhan && rizz >= 100)
         {
-            SceneManager.LoadScene("Win-GenghisKhan");
+            SceneManager.LoadScene("Win-Genghis");
         }
         else if(GameManager.currentBachelor == selectedBachelor.GenghisKhan && rizz <= 100)
         {
-            SceneManager.LoadScene("Lose-GenghisKhan");
+            SceneManager.LoadScene("Lose-Genghis");
         }
         
     }
