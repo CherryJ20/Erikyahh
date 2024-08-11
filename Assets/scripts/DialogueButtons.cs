@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueButtons : MonoBehaviour
 {
     //variables
     public int rizzMeter;
-    public GameObject Responses1; //Parent objects of the buttons
-    public bool Genghis;
-    public bool MarieAntoinette;
-    public bool Shakespeare;
-
-    int maxRizz;
+    [SerializeField]private List<Sprite> reactions;
+    public Image reactionImage;
 
     // Start is called before the first frame update
     void Start()
@@ -19,40 +16,35 @@ public class DialogueButtons : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void Response() //When button 1 is clicked
     {
-        Debug.Log("this is for response 1"); //Console check thing
         rizzMeter += 10; //makes the rizz meter increase depending on what option users pick
+        reactionImage.sprite = reactions[0];
+
+        ErikaDialogue.Instance.bachelorTextObj.text = "Thats cool.";
+        StartCoroutine(ErikaDialogue.Instance.ReactionPause());
+
     }
         public void Response2() //When button 2 is clicked
     {
-        Debug.Log("this is for response 2");
         rizzMeter += 20;
+        reactionImage.sprite = reactions[1];
+
+        ErikaDialogue.Instance.bachelorTextObj.text = "SUGOI!";
+        StartCoroutine(ErikaDialogue.Instance.ReactionPause());
     }
         public void Response3()
     {
-        Debug.Log("this is for response 3");
         rizzMeter -= 10;
+        reactionImage.sprite = reactions[2];
+
+        ErikaDialogue.Instance.bachelorTextObj.text = "Um... Ok?";
+        StartCoroutine(ErikaDialogue.Instance.ReactionPause());
     }
 
-    public void characterIfs()
+    public void Continue()
     {
-        if(Shakespeare)
-        {
-            maxRizz=70;
-        }
-        else if (MarieAntoinette)
-        {
-            maxRizz=80;
-        }
-        else if (Genghis)
-        {
-            maxRizz=100;
-        }
+        ErikaDialogue.Instance.Responses1.SetActive(true);
     }
+     
 }
